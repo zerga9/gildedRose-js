@@ -36,4 +36,10 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(50);
   });
 
+  it("quality Backstage passes increases by 2 when between 10 and 5 days", function() {
+    const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 9, 10)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(12);
+  });
+
 });
