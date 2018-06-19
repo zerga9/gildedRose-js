@@ -4,7 +4,6 @@ describe("Gilded Rose", function() {
 
   beforeEach(function() {
     gildedRose = new Shop();
-    items = gildedRose.updateQuality();
   });
 
   it("should foo", function() {
@@ -14,9 +13,15 @@ describe("Gilded Rose", function() {
   });
 
   it("the quality of an item is never negative", function() {
-    var item = new Item("foo", 0, 0);
-    gildedRose.items.push(item);
+    const gildedRose = new Shop([new Item("foo", 0, 0)]);
+    const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(0);
+  });
+
+  it("Aged Brie increases in quality the older it gets", function() {
+    const gildedRose = new Shop([new Item("Aged Brie", 0, 0)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBeGreaterThan(0);
   });
 
 });
