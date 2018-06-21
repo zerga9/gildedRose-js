@@ -43,6 +43,14 @@ class Shop {
         item.quality = 50
       }
     }
+    normalItem(item){
+      if (item.sellIn < 0){
+        item.quality > 0 && item.quality < 50 ? item.quality -= 1 : item.quality;
+      } else {
+        item.quality > 0 ? item.quality -= 2 : item.quality;
+      }
+      item.sellIn -=1;
+    }
 
 
   updateQuality() {
@@ -58,10 +66,7 @@ class Shop {
         item.sellIn -= 1;
 
       } else {
-        if (item.quality > 0) {
-                item.quality -= 1;
-                item.sellIn -= 1;
-            }
+        this.normalItem(item);
       }
       if (item.sellIn < 0) {
         if (item.name == 'Aged Brie'){
@@ -69,13 +74,7 @@ class Shop {
                 item.quality += 1;
           }
         }
-        else {
-            if (item.quality > 0) {
-              item.quality -= 1;
-            } else {
-              item.quality = 0;
-            }
-        }
+        
       }
     });
     return this.items;
