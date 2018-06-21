@@ -60,17 +60,22 @@ class Shop {
 
   updateQuality() {
     this.items.forEach((item) => {
-      if (item.name == 'Sulfuras, Hand of Ragnaros'){
-        this.sulfuras(item);
-      } else if (item.name == 'Aged Brie'){
-      this.agedBrie(item);
-    } else if(item.name == 'Backstage passes to a TAFKAL80ETC concert'){
-      this.backStagePasses(item);
-      } else if(item.name =="Conjured Mana Cake") {
-       this.conjuredItem(item);
-      } else {
-        this.normalItem(item);
-      }
+      switch(item.name){
+        case('Sulfuras, Hand of Ragnaros'):
+          this.sulfuras(item);
+          break;
+        case('Aged Brie'):
+          this.agedBrie(item);
+          break;
+        case('Backstage passes to a TAFKAL80ETC concert'):
+          this.backStagePasses(item);
+          break;
+        case("Conjured Mana Cake"):
+          this.conjuredItem(item);
+          break;
+        default:
+          this.normalItem(item)
+       }
     });
     return this.items;
   }
