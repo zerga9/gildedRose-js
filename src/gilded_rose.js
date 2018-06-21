@@ -12,10 +12,14 @@ class Shop {
     this.items = items;
   }
 
+  sulfuras(item) {
+    item = item
+  }
+
   updateQuality() {
     this.items.forEach((item) => {
       if (item.name == 'Sulfuras, Hand of Ragnaros'){
-        item = item
+        this.sulfuras(item);
       } else if (item.name == 'Aged Brie' || item.name == 'Backstage passes to a TAFKAL80ETC concert'){
         if (item.quality < 50) {
               item.quality += 1;
@@ -35,6 +39,7 @@ class Shop {
       } else if(item.name =="Conjured Mana Cake") {
         item.quality -= 2;
         item.sellIn -= 1;
+
       } else {
         if (item.quality > 0) {
                 item.quality -= 1;
