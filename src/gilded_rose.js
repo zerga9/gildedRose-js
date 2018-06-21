@@ -14,13 +14,14 @@ class Shop {
 
   updateQuality() {
     this.items.forEach((item) => {
-      if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+      if (item.name == 'Sulfuras, Hand of Ragnaros'){
+        item.quality == item.quality;
+        item.sellIn == item.sellIn;
+      } else if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
         if (item.quality > 0) {
-          if (item.name != 'Sulfuras, Hand of Ragnaros') {
             item.quality -= 1;
-          }
         }
-      } else {
+    }else {
         if (item.quality < 50) {
           item.quality += 1;
           if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
@@ -40,9 +41,7 @@ class Shop {
         if (item.name != 'Aged Brie') {
           if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
             if (item.quality > 0) {
-              if (item.name != 'Sulfuras, Hand of Ragnaros') {
                 item.quality -= 1;
-              }
             }
           } else {
             item.quality = 0;

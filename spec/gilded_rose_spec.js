@@ -59,4 +59,15 @@ describe("Gilded Rose", function() {
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(4);
   });
+  it("sellIn goes down by one", function() {
+    const gildedRose = new Shop([new Item("foo", 1, 6)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toEqual(0);
+  });
+  it("sellIn stays the same for Sulfuras", function() {
+    const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", 1, 6)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toEqual(1);
+  });
+
 });
