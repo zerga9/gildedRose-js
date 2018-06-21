@@ -15,8 +15,7 @@ class Shop {
   updateQuality() {
     this.items.forEach((item) => {
       if (item.name == 'Sulfuras, Hand of Ragnaros'){
-        item.quality == item.quality;
-        item.sellIn == item.sellIn;
+        item == item
       } else if (item.name == 'Aged Brie' || item.name == 'Backstage passes to a TAFKAL80ETC concert'){
         if (item.quality < 50) {
               item.quality += 1;
