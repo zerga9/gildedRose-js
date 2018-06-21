@@ -70,4 +70,11 @@ describe("Gilded Rose", function() {
     expect(items[0].sellIn).toEqual(1);
   });
 
+  it("conjured items degrade twice as fast in quality as normal items", function() {
+    const gildedRose = new Shop([new Item("Conjured Mana Cake", 1, 40)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(38);
+
+  })
+
 });
