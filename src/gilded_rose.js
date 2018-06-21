@@ -22,7 +22,7 @@ class Shop {
         }
       } else {
         if (item.quality < 50) {
-          item.quality = item.quality + 1;
+          item.quality += 1;
           if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
             if (item.sellIn < 11) {
                 item.quality += 1;
@@ -45,7 +45,7 @@ class Shop {
               }
             }
           } else {
-            item.quality = item.quality - item.quality;
+            item.quality = 0;
           }
         } else {
           if (item.quality < 50) {
