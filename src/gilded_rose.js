@@ -32,6 +32,8 @@ class Shop {
               }
           }
         }
+      } else if(item.name =="Conjured Mana Cake") {
+        item.quality -= 2;
       } else {
         if (item.quality > 0) {
                 item.quality -= 1;
