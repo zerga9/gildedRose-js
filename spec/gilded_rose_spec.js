@@ -2,10 +2,6 @@ describe("Gilded Rose", function() {
 
   var gildedRose;
 
-  beforeEach(function() {
-    gildedRose = new Shop();
-  });
-
   it("should foo", function() {
     const gildedRose = new Shop([ new Item("foo", 0, 0) ]);
     const items = gildedRose.updateQuality();
